@@ -1,57 +1,53 @@
 import FitMax from "../images/fitmax.png"
-import DoctorAcademy from '../images/Doctors Acedmy app.png'
-import Keepfit from '../images/Keep fit.png'
-import shieldsync from '../images/Shield sync Fast vpn proxy.png'
-import stepnget from '../images/Step N get.png'
-import stepup from "../images/Step up.png"
+import DoctorAcademy from '../images/DoctorsAcedmy.png'
+import Keepfit from '../images/Keepfit.png'
+import ShieldSync from '../images/ShieldsyncFastvpn.png'
+import StepNGet from '../images/StepNget.png'
+import StepUp from "../images/Stepup.png"
 
-
-// Note: You should add actual screenshots/images of your mobile apps to the images folder
-// and import them here. For now, I'm using placeholder images.
-
-export const data=[
+export const data = [
     {
-        id:1,
-        name:"FitMax",
-        desc:"Weight Lose Workout App",
-        image:FitMax,
-        stack:"Flutter, Dart, Firebase",
-         // Replace with actual app screenshot
-        github:"#", // Add your GitHub repo link if available
-        live:"https://play.google.com/store/apps/details?id=com.fitness.workoutplanner.weight.lose.challenge",
+        id: 1,
+        name: "FitMax",
+        desc: "Weight Loss Workout App",
+        image: FitMax,
+        stack: "Flutter, Dart, Firebase",
+        github: "#",
+        live: "https://play.google.com/store/apps/details?id=com.fitness.workoutplanner.weight.lose.challenge",
     },
     {
-        id:2,
-        name:"Shield Sync Fast VPN",
-        desc:"VPN App with GetX",
-          image:FitMax,
-        stack:"Flutter, Dart, GetX",
-          
-       // Replace with actual app screenshot
-   
-        live:"https://play.google.com/store/apps/details?id=com.shieldsync.vpn.unlimited.proxy",
+        id: 2,
+        name: "Shield Sync Fast VPN",
+        desc: "VPN App with GetX",
+        image: ShieldSync,
+        stack: "Flutter, Dart, GetX",
+        github: "#",
+        live: "https://play.google.com/store/apps/details?id=com.shieldsync.vpn.unlimited.proxy",
     },
     {
-        id:3,
-        name:"Step Up",
-          
-        desc:"Count & Track Steps",
-          image:stepup,
-        stack:"Flutter, Dart, iOS",
-        // Replace with actual app screenshot
-        github:"#", // Add your GitHub repo link if available
-        live:"https://apps.apple.com/sn/app/step-up-count-track-steps/id6569240814",
+        id: 3,
+        name: "Step Up",
+        desc: "Count & Track Steps",
+        image: StepUp,
+        stack: "Flutter, Dart, iOS",
+        github: "#",
+        live: "https://apps.apple.com/sn/app/step-up-count-track-steps/id6569240814",
     },
     {
-        id:4,
-       
-        desc:"Steps Tracking & Rewards",
-         name:"Step N Get APP",
-            images:stepnget,
-        stack:"Flutter, Dart, Firebase",
-
-         // Replace with actual app screenshot
-        github:"#", // Add your GitHub repo link if available
-        live:"https://play.google.com/store/apps/details?id=com.genwizz.stepnget",
+        id: 4,
+        name: "Step N Get APP",
+        desc: "Steps Tracking & Rewards",
+        image: StepNGet,
+        stack: "Flutter, Dart, Firebase",
+        github: "#",
+        live: "https://play.google.com/store/apps/details?id=com.genwizz.stepnget",
+    }, {
+        id: 5,
+        name: "Keep Fit",
+        desc:" Focused on UI development for 'Keep Fit', a fitness app built with Flutter",
+        image: Keepfit,
+        stack: "Flutter, Dart, Firebase",
+        github: "#",
+        live: "https://play.google.com/store/apps/details?id=com.keepfit.buddy",
     }
 ]

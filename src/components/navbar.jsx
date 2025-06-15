@@ -1,80 +1,59 @@
 import React, { useState } from 'react'
-import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { FaBars, FaGithub, FaLinkedin, FaTimes } from 'react-icons/fa'
-import { HiOutlineMail } from 'react-icons/hi'
-import logo from "../images/logo2.avif"
 import { Link } from 'react-scroll'
 
 const Navbar = () => {
-    const [nav,setNav]=useState(false)
-    const handlenav=()=>setNav(!nav)
-  return (
+    const [nav, setNav] = useState(false)
+    const handleNav = () => setNav(!nav)
 
-    <nav className='fixed w-full h-[80px] flex justify-between items-center  bg-black text-gray-300'>
-        <div >
-<img src={logo} alt='Logo Image' style={{ width: '100px' ,height:'80px' }}/>
-        </div>
-{/* menu */}
+    return (
+        <nav className='fixed w-full h-20 flex justify-between items-center px-6 bg-black/95 backdrop-blur-sm text-white z-50 border-b border-gray-800'>
+            <div className='flex items-center'>
+                <div className='w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center font-bold text-xl'>
+                    SB
+                </div>
+            </div>
 
-<ul className='hidden md:flex   '>
-    <li className='md:px-3' >
-      <Link to='home' smooth={true} duration={500}>
-      Home
-      </Link>
-    </li>
-    <li className='md:px-3'>
-      <Link to='about' smooth={true} duration={500}>
-      About
-      </Link>
-    </li>
-    <li className='md:px-3'>
-      <Link to='skills' smooth={true} duration={500}>
-      Skills
-      </Link>
-    </li>
-    <li className='md:px-3'>
-      <Link to='work' smooth={true} duration={500}>
-      Work
-      </Link>
-    </li>
-    <li className='md:px-3'>
-      <Link to='contact' smooth={true} duration={500}>
-      Contact
-      </Link>
-    </li>
-</ul>
-<div  className='sm:hidden z-10 px-3' onClick={handlenav} >
-{!nav ? <FaBars /> : <FaTimes />}
+            <ul className='hidden md:flex space-x-8'>
+                {['home', 'about', 'skills', 'work', 'contact'].map((item) => (
+                    <li key={item}>
+                        <Link 
+                            to={item} 
+                            smooth={true} 
+                            duration={500}
+                            className='hover:text-purple-400 transition-colors duration-300 capitalize font-medium cursor-pointer'
+                        >
+                            {item}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
 
-</div>
-{/* mobile menu */}
+            <div className='md:hidden z-10' onClick={handleNav}>
+                {!nav ? <FaBars className='text-2xl' /> : <FaTimes className='text-2xl' />}
+            </div>
 
-<ul className={!nav? 'hidden': 'absolute top-0 left-0 w-full h-screen bg-black flex flex-col justify-between items-center}absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-between items-center'}>
-<li className='text-4xl py-6'><Link onClick={handlenav} smooth={true} duration={500} to='home'>Home</Link></li>
-    <li className='text-4xl py-6'><Link onClick={handlenav} smooth={true} duration={500} to='about'>About</Link></li>
-    <li className='text-4xl py-6'><Link onClick={handlenav} smooth={true} duration={500} to="skills">Skills</Link></li>
-    <li className='text-4xl py-6'><Link onClick={handlenav} smooth={true} duration={500} to="work">Work</Link></li>
-    <li className='text-4xl py-6'><Link onClick={handlenav} smooth={true} duration={500} to="contact">Contact</Link></li>
-</ul>
-{/* social Icons */}
-<div className=' hidden lg:flex fixed flex-col top-[35%] left-0'>
-  <ul>
-    <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600 '>
-      <a href="https://linkedin.com/in/syed-shah-bilawal-a06206264" target='_blank' className='flex justify-between items-center w-full text-gray-300'>
- Linkedin<FaLinkedin size={30}/>
-      </a>
-    </li>
-    <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333] '>
-      <a href="https://github.com/https://www.linkedin.com/in/syed-shah-bilawal-a06206264" target='_blank' className='flex justify-between items-center w-full text-gray-300'>
- Github<FaGithub size={30}/>
-      </a>
-    </li>
- 
-  </ul>
+            {nav && (
+                <ul className='absolute top-0 left-0 w-full h-screen bg-black flex flex-col justify-center items-center space-y-8'>
+                    {['home', 'about', 'skills', 'work', 'contact'].map((item) => (
+                        <li key={item}>
+                            <Link 
+                                to={item} 
+                                smooth={true} 
+                                duration={500}
+                                onClick={handleNav}
+                                className='text-4xl hover:text-purple-400 transition-colors duration-300 capitalize cursor-pointer'
+                            >
+                                {item}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            )}
 
-</div>
-    </nav>
-  )
+           
+        </nav>
+    )
 }
 
 export default Navbar

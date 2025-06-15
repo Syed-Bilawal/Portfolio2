@@ -1,52 +1,34 @@
 import React from 'react'
-import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { HiArrowNarrowRight } from 'react-icons/hi'
 import { Link } from 'react-scroll'
 
 const Home = () => {
-  return (
-    <div name='home' className='w-full h-screen bg-black'>
-<div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
-<p className='text-pink-600'>Hi,my name is</p>
-<h1 className='text-4xl sm:text-7xl font-bold text-[#ccd6f6]'>
-  Syed Shah Bilawal
-</h1>
-<h2 className='text-4xl sm:text-7xl font-bold text-[#8892b0]'>Flutter Developer</h2>
-<p className='text-[#8892b0] py-4 max-w-[700px]'>
-  I am a passionate Flutter developer with 2 years of hands-on experience, specializing in developing cross-platform mobile applications. Currently I'm focused on creating user-friendly mobile apps using Flutter and Dart.
-</p>
-<div className='sm:flex '>
-<Link to='work'>
-<div>
-          <button className='text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-pink-600 hover:border-pink-600'>
-           
-           View Work
-            <span className='group-hover:rotate-90 duration-300'>
-              <HiArrowNarrowRight className='ml-3 ' />
-            </span>
-          </button>
+    return (
+        <div name='home' className='w-full h-screen bg-gradient-to-br from-black via-gray-900 to-black'>
+            <div className='max-w-6xl mx-auto px-8 flex flex-col justify-center h-full'>
+                <div className='space-y-6'>
+                    <p className='text-purple-400 text-lg font-medium'>Hi, my name is</p>
+                    <h1 className='text-5xl sm:text-7xl font-bold text-white leading-tight'>
+                        Syed Shah <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400'>Bilawal</span>
+                    </h1>
+                    <h2 className='text-3xl sm:text-6xl font-bold text-gray-400'>Flutter Developer</h2>
+                    <p className='text-gray-300 py-4 max-w-3xl text-lg leading-relaxed'>
+                        I am a passionate Flutter developer with 2 years of hands-on experience, specializing in developing cross-platform mobile applications. Currently I'm focused on creating user-friendly mobile apps using Flutter and Dart.
+                    </p>
+                    
+                    <div className='flex flex-wrap gap-4 pt-6'>
+                        <Link to='work' smooth={true} duration={500}>
+                            <button className='group bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-lg font-medium flex items-center hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/25'>
+                                View Work
+                                <HiArrowNarrowRight className='ml-3 group-hover:translate-x-2 transition-transform duration-300' />
+                            </button>
+                        </Link>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
-        </Link>
-        <Link to='resume'>
-<div>
-          <button className='sm:mx-4 text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-pink-600 hover:border-pink-600'>
-           
-           Resume 
-            <span className='group-hover:rotate-90 duration-300'>
-              <HiArrowNarrowRight className='ml-3 ' />
-            </span>
-          </button>
-        </div>
-        </Link>
-   
-        
-</div>
-
-</div>
-
-        
-    </div>
-  )
+    )
 }
 
 export default Home

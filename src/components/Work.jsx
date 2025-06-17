@@ -1,6 +1,7 @@
-import React from 'react'
-import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
-import { data } from "../data/data"
+import React from 'react';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import { data } from "../data/data";
+import { Link } from 'react-router-dom';
 
 const Work = () => {
     return (
@@ -33,9 +34,14 @@ const Work = () => {
                                 <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors duration-300">
                                     {project.name}
                                 </h3>
-                                <p className="text-gray-400 mb-4 text-lg">
-                                    {project.desc}
-                                </p>
+                                {project.desc && (
+                                    <p className="text-gray-400 mb-4 text-lg">
+                                        {project.desc.length > 120
+                                            ? <span>{project.desc.slice(0, 120)}... <Link to={`/project/${project.id}`} className="text-purple-400 hover:underline">See more</Link></span>
+                                            : project.desc
+                                        }
+                                    </p>
+                                )}
                                 <div className="flex flex-wrap gap-2 mb-6">
                                     {project.stack.split(', ').map((tech, index) => (
                                         <span key={index} className="px-3 py-1 text-sm bg-purple-500/20 text-purple-300 rounded-full border border-purple-500/30">
@@ -45,15 +51,13 @@ const Work = () => {
                                 </div>
                                 
                                 <div className="flex gap-4">
-                                    <a 
-                                        href={project.live} 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
+                                    <Link
+                                        to={`/project/${project.id}`}
                                         className="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-lg font-medium hover:scale-105 transition-transform duration-300"
                                     >
                                         <FaExternalLinkAlt />
-                                        Live Demo
-                                    </a>
+                                        View
+                                    </Link>
                                     {project.github && project.github !== "#" && (
                                         <a 
                                             href={project.github} 

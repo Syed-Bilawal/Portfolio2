@@ -35,14 +35,13 @@ const About = () => {
                         </div>
                     </div>
 
-                    <div className='relative'>
-                        <div className='w-80 h-80 mx-auto bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20 animate-pulse'></div>
-                        <div className='absolute inset-0 flex items-center justify-center'>
-                            <div className='w-72 h-72 bg-gray-800 rounded-full border-4 border-purple-500 flex items-center justify-center'>
-                                <span className='text-6xl font-bold text-purple-400'>SB</span>
-                            </div>
-                        </div>
-                    </div>
+                    <div className='flex justify-center items-center'>
+  <img
+    src={require('../images/portfoliopicture.png')}
+    alt="Syed Shah Bilawal"
+    className="w-72 h-72 object-cover object-top rounded-full shadow-lg"
+  />
+</div>
                 </div>
             </div>
         </div>
